@@ -1,9 +1,8 @@
 class Solution {
     List<List<Integer>> res = new ArrayList<List<Integer>>();
     public List<List<Integer>> combine(int n, int k) {
-        
+       
         dfs( n,k, new ArrayList(),1);
-        
         return res;
     }
     
