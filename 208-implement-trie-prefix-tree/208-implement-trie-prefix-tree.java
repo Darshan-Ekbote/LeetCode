@@ -5,7 +5,10 @@ class TrieNode{
 
 
 class Trie {
-private TrieNode root = new TrieNode();
+private TrieNode root;
+    public Trie() {
+        root = new TrieNode();
+    }
     
     public void insert(String word) {
         TrieNode curr = root;
