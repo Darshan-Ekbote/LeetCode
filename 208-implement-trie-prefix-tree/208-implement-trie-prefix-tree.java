@@ -2,7 +2,7 @@ class TrieNode{
     public TrieNode[] children= new TrieNode[26];
    // public char val;
     public boolean isWord;
-    public TrieNode() {}
+    //public TrieNode() {}
     //TrieNode(char c){
       //  TrieNode node= new TrieNode();
        // node.val = c;
