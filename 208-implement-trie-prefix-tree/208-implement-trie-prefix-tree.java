@@ -1,21 +1,11 @@
 class TrieNode{
     public TrieNode[] children= new TrieNode[26];
-   // public char val;
     public boolean isWord;
-    //public TrieNode() {}
-    //TrieNode(char c){
-      //  TrieNode node= new TrieNode();
-       // node.val = c;
-   // }
 }
 
 
 class Trie {
-private TrieNode root;
-    public Trie() {
-        root = new TrieNode();
-        //root.val = ' ';
-    }
+private TrieNode root = new TrieNode();
     
     public void insert(String word) {
         TrieNode curr = root;
