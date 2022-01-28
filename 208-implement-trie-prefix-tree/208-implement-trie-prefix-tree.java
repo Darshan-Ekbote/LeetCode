@@ -1,6 +1,11 @@
 class TrieNode{
     public TrieNode[] children= new TrieNode[26];
     public boolean isWord;
+    //public TrieNode() {}
+    //TrieNode(char c){
+      //  TrieNode node= new TrieNode();
+       // node.val = c;
+   // }
 }
 
 
@@ -8,6 +13,7 @@ class Trie {
 private TrieNode root;
     public Trie() {
         root = new TrieNode();
+        //root.val = ' ';
     }
     
     public void insert(String word) {
