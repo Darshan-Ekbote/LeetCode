@@ -18,6 +18,7 @@ class Solution {
     public int diameterOfBinaryTree(TreeNode root) {
         //find the  height at each node 
         height(root);
+        // last node is not inclusive hence (diameter-1)
         return diameter-1;
     }
     
