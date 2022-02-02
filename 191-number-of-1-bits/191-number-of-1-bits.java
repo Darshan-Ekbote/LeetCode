@@ -4,10 +4,10 @@ public class Solution {
         
         String s =  Integer.toBinaryString(n);
         int oneCount =0;
-        for( char c : s.toCharArray()){
+        for( char c : s.toCharArray())
             if(c=='1')
                 oneCount++;
-        }
+        
         
         return oneCount;
     }
