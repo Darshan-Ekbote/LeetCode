@@ -1,19 +1,33 @@
-class Solution {
-    public int maxProduct(int[] nums) {
-        if (nums.length == 0) return 0;
-        int max = nums[0];
-        for (int i = 0; i < nums.length; i++) 
-            max = Math.max( slidingWindow(nums,i), max);
-        return max;
-    }
-    
-    public int slidingWindow(int [] nums , int index ){
+class Solution{
+public int maxProduct(int[] nums) {
+
+        
+        if(nums == null || nums.length == 0){
+            return 0;
+        }
+        
+        if(nums.length == 1){
+            return nums[0];
+        }
+        int max = Integer.MIN_VALUE;
         int prod = 1;
-        int max =Integer.MIN_VALUE;
-            for (int j = index; j < nums.length; j++) {
-                prod *= nums[j];
-                max = Math.max(max, prod);
+        int result = 0;
+        for(int i = 0 ; i < nums.length ; i++){
+            prod *= nums[i];
+            result = Math.max(result, prod);
+            if(prod == 0){
+                prod = 1;
             }
-        return max;
+        }
+        prod = 1;
+        for(int i = nums.length -1 ; i>= 0 ; i--){
+            prod *= nums[i];
+            result = Math.max(result, prod);
+            if(prod == 0){
+                prod = 1;
+            }
+        }
+        return result;
     }
+
 }
