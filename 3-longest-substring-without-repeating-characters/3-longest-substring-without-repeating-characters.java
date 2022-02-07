@@ -4,12 +4,13 @@ class Solution {
          if(len==1|| len==0)
           return len;
         
-        ArrayList <Integer> al = new ArrayList<>();
-        
+        int maxLen =0;
         for(int i=0;i< len;i++){
-            al.add(slidingWindow(s,i));
+           int slen = slidingWindow(s,i);
+            if( maxLen<slen)
+                maxLen = slen;
         }
-        return Collections.max(al);
+        return maxLen;
     }
     
     int slidingWindow(String s, int j){
