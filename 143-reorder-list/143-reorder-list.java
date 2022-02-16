@@ -13,7 +13,7 @@ public class Solution {
         
         if (head==null||head.next==null) return;
         
-        Deque <ListNode> stack = new ArrayDeque<>();
+        Stack <ListNode> stack = new Stack<>();
         ListNode node= head;
         while(node!=null){
             stack.push(node);
