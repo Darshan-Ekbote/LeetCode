@@ -15,18 +15,7 @@
  */
 class Solution {
     public TreeNode searchBST(TreeNode root, int val) {
-        
-        if(root==null) return root;
-        else if (root.val == val) return root;
-        return  preorder(root,val);
-    }
-    
-    
-    public TreeNode preorder(TreeNode root,int val){
-        
-        if(root ==null) return null;
-        TreeNode right = preorder(root.right,val);
-        TreeNode left = preorder(root.left,val);
-        return (root.val ==val)?root: (right==null?left : right);
+        if(root==null || root.val == val) return root;
+        return (root.val > val ? searchBST(root.left,val) : searchBST(root.right,val));
     }
 }
