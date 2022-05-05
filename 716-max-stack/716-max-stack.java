@@ -12,13 +12,14 @@ class MaxStack {
     }
     
     public int pop() {
-        int popped = st.remove(st.size()-1);
-        return popped;
+         return st.remove(st.size()-1);
     }
     
     public int top() {
-        return st.get(st.size()-1);
+        int popped= st.get(st.size()-1);
+     return popped;
     }
+        
     
     public int peekMax() {
         int max= Integer.MIN_VALUE;
