@@ -12,8 +12,7 @@ class Solution {
     public ListNode rotateRight(ListNode head, int k) {
         
         if (head == null || head.next == null || k==0) return head;
-        ListNode refHead =new ListNode();
-        refHead =head;
+        
         ListNode oldEnd = head;
         int len =1;
         for(;oldEnd.next!=null;len++)
