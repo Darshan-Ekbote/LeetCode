@@ -23,14 +23,9 @@ class Solution {
         int l =left;
         int r=right;
        
-        while(l>=0 && r<=s.length()-1){
-            
-            if(s.charAt(l)==s.charAt(r)){
+        while(l>=0 && r<=s.length()-1 && s.charAt(l)==s.charAt(r)){
                 l--;
                 r++;
-                
-            }else break;
-                
         }
         
         return r-l-1;
