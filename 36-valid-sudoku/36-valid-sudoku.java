@@ -7,11 +7,16 @@ class Solution {
                 char c = board[i][j];
                 if(c !='.')
                 if(
-                    !set.add(c + "at row"+ i)||
-                     !set.add(c + "at col"+ j) ||
-                     !set.add(c + "at subbox"+ i/3 + ":" + j/3)
-                  
+                  set.contains(c + "at row"+ i)||
+                     set.contains(c + "at col"+ j) ||
+                     set.contains(c + "at subbox"+ i/3 + ":" + j/3)
                   ) return false;
+                else{
+                set.add(c + "at row"+ i);
+                     set.add(c + "at col"+ j) ;
+                     set.add(c + "at subbox"+ i/3 + ":" + j/3);
+                
+                }
                     
                                 
             }
