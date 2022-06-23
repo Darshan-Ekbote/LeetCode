@@ -3,22 +3,27 @@ class Solution {
         List<List<String>> res = new ArrayList<>();
         Map < String, List<String>> m = new HashMap<>();
         
-        for( String str : strs){
-            char[] s = str.toCharArray();
-            Arrays.sort(s);
-            String ss = new String(s);
-            if(m.containsKey(ss))
-                m.get(ss).add(str);
-            else{
-                List<String> temp = new ArrayList< >( );
-                temp.add(str);
-                m.put(ss, temp);
+     
+        for( String s: strs){
+            
+            char[] sArr = s.toCharArray();
+            
+            Arrays.sort(sArr);
+            String sNew = new String(sArr);
+            
+            if(m.containsKey(sNew)){
+                m.get(sNew).add(s);
+            }else{
+                List <String> temp = new ArrayList<>();
+                temp.add(s);
+                m.put(sNew,temp);
             }
+            
+            
         }
         
-        for( String key : m.keySet()){
-             List<String> temp = m.get(key);
-            res.add( temp);
+        for(String key : m.keySet()){
+            res.add(new ArrayList<>(m.get(key)));
         }
         
         return res;
