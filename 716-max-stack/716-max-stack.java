@@ -24,15 +24,12 @@ class MaxStack {
     public int peekMax() {
         int max= Integer.MIN_VALUE;
         
-        
         for( int i=0;i<st.size();i++){
-            
             if(st.get(i)>=max){
                 max=st.get(i);
                 maxIndex=i;
             }
         }
-        
         return max;
     }
     
