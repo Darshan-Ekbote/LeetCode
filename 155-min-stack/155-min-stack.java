@@ -1,34 +1,32 @@
 class MinStack {
-    
-    //0th -> current , 1st -> min
-    Stack <int[]> st = new Stack<>();
-    
-    
 
-    public MinStack() {  }
+    
+    // 0th --> current and 1st --> min
+    Stack <int[]> st;
+    public MinStack() {
+        st = new Stack<>();
+    }
     
     public void push(int val) {
         if(st.isEmpty()){
-             st.push(new int[] {val,val});
+            st.add( new int[]{val,val});
             return;
         }
-           
-       
-            int currVal = st.peek()[1];
-            st.push(new int[]{val, Math.min(currVal,val)} );
-        
+        int min= st.peek()[1];
+        st.add( new int[]{ val, Math.min(min,val)});
     }
     
     public void pop() {
-        st.pop();
+        if(!st.isEmpty()) st.pop();
+        else return ;
     }
     
     public int top() {
-        return st.peek()[0];
+        return st.peek()[0]; //get current top
     }
     
     public int getMin() {
-        return st.peek()[1];
+        return st.peek()[1]; //get all time minimum from here 
     }
 }
 
