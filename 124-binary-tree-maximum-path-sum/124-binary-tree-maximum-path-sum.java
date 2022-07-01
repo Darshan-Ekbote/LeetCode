@@ -24,19 +24,18 @@ class Solution {
     
    public int getMaxPath( TreeNode root){
        
-       //base condition here
+      
        if(root==null) return 0;
        
-       int left = Math.max(getMaxPath(root.left),0);
+       int left = Math.max(getMaxPath(root.right),0);
        
-       int right = Math.max(getMaxPath(root.right),0);
+       int right= Math.max(getMaxPath(root.left),0);
        
+       int currSum = root.val + left+right;
        
-       int currSum = root.val + left +right;
+       maxSum = Math.max(maxSum, currSum);
        
-       maxSum = Math.max(currSum , maxSum);
-       
-       return root.val + Math.max(left, right);
+       return root.val+ Math.max(left,right);
        
        
        }
