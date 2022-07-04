@@ -9,16 +9,19 @@ class MinStack {
     
     public void push(int val) {
         if(st.isEmpty()){
-            st.add( new int[]{val,val});
-            return;
+            st.push( new int []{val,val});
+        }else{
+            
+            int currMin = st.peek()[1];
+            st.push(new int[]{val, Math.min(val,currMin)});
+            
         }
-        int min= st.peek()[1];
-        st.add( new int[]{ val, Math.min(min,val)});
+        
     }
     
     public void pop() {
-        if(!st.isEmpty()) st.pop();
-        else return ;
+       if(!st.isEmpty()) st.pop();
+        else return;
     }
     
     public int top() {
