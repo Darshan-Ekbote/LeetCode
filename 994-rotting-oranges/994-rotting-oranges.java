@@ -20,7 +20,6 @@ class Solution {
         
         
         while(!q.isEmpty()) {
-            List<int[]> list = new ArrayList();
             int size =q.size();
             while(size>0) {
                 
@@ -31,24 +30,18 @@ class Solution {
                     int j = point[1] + dir[1];
                     //get fresh orange
                     if(isValid(grid, i, j)){
-                      list.add(new int[]{i, j});  
                     //mark is rotten
                       grid[i][j] = 2;
                       freshOranges--;
+                    //add it to the queue
                       q.add(new int[]{i, j});
                     } 
                 }
                 size--;
             }
-            
-            //for(int[] p : list) {
-                //q.add(p);
-            //}
-            //for last rotten orange list is empty but queue is not ...hence this condition
-            //if(!list.isEmpty())  
                 minutes++;
         }
-        //if all freshOranges cannote be converted to rotten the return -1 else minutes
+        //if all freshOranges cannote be converted to rotten the return -1 else minutes -1 (last rotten orange cannot be used for rotting more oranges hence -1)
         return freshOranges > 0 ? -1 : ( minutes-1>0 ? minutes-1:0);
     }
     
