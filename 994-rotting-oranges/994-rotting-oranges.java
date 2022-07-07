@@ -41,10 +41,10 @@ class Solution {
             for(int[] p : list) {
                 q.add(p);
             }
-            //if(!list.isEmpty()) 
-            minutes++;
+            //for last rotten orange list is empty but queue is not ...hence this condition
+            if(!list.isEmpty())  minutes++;
         }
-        return count > 0 ? -1 : ( minutes-1 >0?minutes-1 :0);
+        return count > 0 ? -1 :  minutes;
     }
     
     private boolean isValid(int[][] grid, int i, int j){
