@@ -3,7 +3,7 @@ class Solution {
     
     public int orangesRotting(int[][] grid) {
         int minutes = 0;
-        int count = 0;
+        int freshOranges = 0;
         Queue<int[]> q = new LinkedList<>();
         
         //add rotten orange to the queue
@@ -13,7 +13,7 @@ class Solution {
                 if(val == 2){
                     q.add(new int[]{i, j});
                 } else if(val == 1) {
-                    count++;
+                    freshOranges++;
                 }
             }
         }
@@ -29,11 +29,12 @@ class Solution {
                     
                     int i = point[0] + dir[0];
                     int j = point[1] + dir[1];
-                    
+                    //get fresh orange
                     if(isValid(grid, i, j)){
                       list.add(new int[]{i, j});  
+                    //mark is rotten
                       grid[i][j] = 2;
-                      count--;
+                      freshOranges--;
                     } 
                 }
             }
@@ -44,7 +45,8 @@ class Solution {
             //for last rotten orange list is empty but queue is not ...hence this condition
             if(!list.isEmpty())  minutes++;
         }
-        return count > 0 ? -1 :  minutes;
+        //if all freshOranges cannote be converted to rotten the return -1 else minutes
+        return freshOranges > 0 ? -1 :  minutes;
     }
     
     private boolean isValid(int[][] grid, int i, int j){
