@@ -21,8 +21,8 @@ class Solution {
         
         while(!q.isEmpty()) {
             List<int[]> list = new ArrayList();
-            
-            while(!q.isEmpty()) {
+            int size =q.size();
+            while(size>0) {
                 
                 int[] point = q.poll();  
                 for(int[] dir : dirs) {
@@ -35,18 +35,21 @@ class Solution {
                     //mark is rotten
                       grid[i][j] = 2;
                       freshOranges--;
+                      q.add(new int[]{i, j});
                     } 
                 }
+                size--;
             }
             
-            for(int[] p : list) {
-                q.add(p);
-            }
+            //for(int[] p : list) {
+                //q.add(p);
+            //}
             //for last rotten orange list is empty but queue is not ...hence this condition
-            if(!list.isEmpty())  minutes++;
+            //if(!list.isEmpty())  
+                minutes++;
         }
         //if all freshOranges cannote be converted to rotten the return -1 else minutes
-        return freshOranges > 0 ? -1 :  minutes;
+        return freshOranges > 0 ? -1 : ( minutes-1>0 ? minutes-1:0);
     }
     
     private boolean isValid(int[][] grid, int i, int j){
