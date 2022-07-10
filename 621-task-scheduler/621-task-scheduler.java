@@ -13,7 +13,8 @@ class Solution {
         
         int totalIdleTime= ( maxFreq-1 )* n;
         
-        for(int j=24;j>=0;j-- ){
+        // AB_AB_A
+        for(int j=0;j<25;j++ ){
             totalIdleTime -= Math.min(maxFreq-1,freq[j]);
         }
         
