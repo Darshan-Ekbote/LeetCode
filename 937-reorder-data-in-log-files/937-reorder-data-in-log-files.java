@@ -1,7 +1,6 @@
 class Solution {
     public String[] reorderLogFiles(String[] logs) {
-
-        Comparator<String> myComp = new Comparator<String>() {
+        Arrays.sort(logs,  new Comparator<String>() {
             @Override
             public int compare(String log1, String log2) {
                 // split each log into two parts: <identifier, content>
@@ -31,9 +30,8 @@ class Solution {
                     // case 3). both logs are digit-log
                     return 0;
             }
-        };
-
-        Arrays.sort(logs, myComp);
+        });
+        
         return logs;
     }
 }
