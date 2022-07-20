@@ -6,18 +6,16 @@ public class Solution {
         int dp[] = new int[amount+1];
         Arrays.fill(dp,amount+1);
          dp[0]=0;
-        for(int i =1;i<=amount;i++){//calculate for each amount
+        
+        for( int am=1;am<=amount;am++){
             
-            //iterate over each coin
             for(int currCoin=0;currCoin<coins.length;currCoin++){
-                if(i>=coins[currCoin]){
-                    
-                    dp[i] = Math.min(dp[i], 1 + dp[i-coins[currCoin]]);
-                }else{
+                if(am>=coins[currCoin])
+                    dp[am] = Math.min(dp[am],1+dp[am-coins[currCoin]]);
+                else
                     break;
-                }
-                
             }
+            
         }
         
         return dp[amount]>amount  ? -1:dp[amount];
