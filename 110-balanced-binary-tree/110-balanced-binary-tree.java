@@ -33,7 +33,6 @@ class Solution {
     
     public int calculate(TreeNode root){
         
-        
         if(root==null) return 0;
         
         int l = 1+ calculate(root.left);
