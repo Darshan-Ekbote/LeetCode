@@ -15,10 +15,10 @@ class Solution {
     ListNode second = dummy;
     ListNode first = dummy;
         
-        for( int i=0;i<=n;i++) 
+        for( int i=0;i<n;i++) 
             first = first.next;
         
-        while(first!=null){
+        while(first.next!=null){
             second = second.next;
             first = first.next;
         }
