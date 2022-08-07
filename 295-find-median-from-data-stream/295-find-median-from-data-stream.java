@@ -37,13 +37,13 @@ class MedianFinder {
             
             return sum/2;
         }
-        if( len %2 == 0  && len >0){
+        else if( len %2 == 0  && len >0){
             
            double sum = al.get(len/2) + al.get(len/2 - 1);
             return sum/2;
         }
         
-        if( len %2 ==1){
+        else if( len %2 ==1){
             double med = al.get(len/2 );
             return med;
         }
