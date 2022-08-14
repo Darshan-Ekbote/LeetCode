@@ -6,10 +6,12 @@ class Solution {
             maxDamage = Math.max(maxDamage, d);
             sumDamage += d;
         }
+        //to get the most optimal use of armour, it needs to be used when damage is more than the armour
         if (maxDamage >= armor) {
             return sumDamage - armor;
         } else {
             return sumDamage - maxDamage;
         }
     }
+    
 }
