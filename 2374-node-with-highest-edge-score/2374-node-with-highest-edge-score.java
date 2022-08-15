@@ -14,7 +14,6 @@ class Solution {
         for(int i=0;i<adj.size();i++){
             if(!adj.get(i).isEmpty()){
                  Double sum = (Double) adj.get(i).stream().mapToDouble(x->x).sum();
-                 //System.out.println("sum for "+i+"  =  "+sum);
                 if(sum>maxScore){
                     maxScore=sum;
                      maxNode=i;
