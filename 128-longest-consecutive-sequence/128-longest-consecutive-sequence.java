@@ -6,7 +6,7 @@ class Solution {
         
         int longest = 0;
         for (int n : nums) {
-            if (!set.contains(n-1)) { //start of a sequence
+            if (!set.contains(n-1)) { //get the start of a sequence
                 int len = 1;
                 while (set.contains(n+len)) {
                     set.remove(n+len);
