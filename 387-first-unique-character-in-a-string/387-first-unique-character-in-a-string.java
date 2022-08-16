@@ -10,8 +10,6 @@ class Solution {
             if(m.get(key)==1) 
                 return s.indexOf(key);
             
-        
-        
         return -1;
         
     }
