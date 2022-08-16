@@ -12,7 +12,6 @@ class Solution {
             
             i=ptr+1;
             
-            
              if(s!=chars[i])
                 {
                     
@@ -29,10 +28,11 @@ class Solution {
                 ptr++;
             }
         }
+        //for the last char
         if(count==1||count==0)
-             sb.append(String.valueOf(chars[i-1]));
+             sb.append(s);
         else
-             sb.append(String.valueOf(chars[i-1])+""+count);
+             sb.append(s+""+count);
         
         String str = sb.toString();
         
