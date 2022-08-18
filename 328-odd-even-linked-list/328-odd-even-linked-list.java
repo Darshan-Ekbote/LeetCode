@@ -19,10 +19,7 @@ class Solution {
         ListNode even = new ListNode();
         ListNode refEven = even;
         
-        //1->2->3->4->5 
-        //o
-        //x e
-        while(head!=null){
+         while(head!=null){
             
             if(count%2==0){
                 even.next= new ListNode(head.val);
