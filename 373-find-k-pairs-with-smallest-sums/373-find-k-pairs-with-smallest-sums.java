@@ -10,9 +10,11 @@ class Solution {
           
         if(nums1.length==0 || nums2.length==0 || k==0) return res;
           
+          //take firsn k pairs wiht nums2[0]
         for(int i=0; i<Math.min(nums1.length ,k); i++) 
             pq.add(new int[]{i, 0, nums1[i] + nums2[0]});
-          
+        
+          //increment the second array index
         while(k-- > 0 && !pq.isEmpty()){
             
             int[] curr = pq.poll();
