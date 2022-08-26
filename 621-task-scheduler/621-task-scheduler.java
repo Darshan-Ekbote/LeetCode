@@ -8,9 +8,10 @@ class Solution {
             
         
         Arrays.sort(freq);
-        
+        //get max freq
         int maxFreq = freq[25];
         
+        //this is the maximum idle time 
         int totalIdleTime= ( maxFreq-1 )* n;
         
         // AB_AB_A
