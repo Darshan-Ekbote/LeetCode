@@ -18,7 +18,8 @@ class Solution {
                         -> [1,2,2,3,3,4] -> final result 
         */
     
-    public ListNode mergeKLists(ListNode[] lists) { // time -> O (N * logk)  & Space complexity - > O (k)
+    public ListNode mergeKLists(ListNode[] lists) { // time -> O (N * logk)  -> k times stack is used for recursion
+                                                        // & Space complexity - > O (k)
                                                     // k -> number of lists  , n_ number of nodes in list
         if(lists == null || lists.length==0)  return null;
         return divideAndConquer(lists,0,lists.length-1);
